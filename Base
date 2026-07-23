@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Birdie</title>
+<meta name="theme-color" content="#0e0e0e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA2IiBoZWlnaHQ9IjEwNiIgdmlld0JveD0iMCAwIDEwNS42IDEwNS42IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8Y2lyY2xlIGN4PSI1Mi43NjIzIiBjeT0iNTIuNzYyMyIgcj0iNTIuNzYyMyIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTc2LjMzODIgMTkuNTExN0g4Mi40NTYyQzgzLjU0ODQgMTkuNTExNyA4Ni4xMTYzIDIwLjkzNjUgODcuMzU3NyAyMi41MTk1Qzg5LjYzMzIgMjUuNDIxMSA4OS45ODEzIDI2LjM5OTYgOTAuMzk5OSAyOS45NTM3QzkzLjU0MTcgMzEuOTk5MSA5Ny4yMjU2IDMzLjQ3MTMgMTAwLjU0IDM1LjIyODVDMTAwLjczNSAzNS4zMzE4IDEwMC45NzIgMzUuNTg0NyAxMDEuMTIxIDM1Ljc1QzEwMS40MDggMzcuMTE3NCAxMDEuMjQzIDM5LjUyOTMgMTAxLjI4OSA0MS4wNTE1Qzk3LjYwNjQgNDEuMDgyNCA5NC4wOTQ0IDQxLjAxNjUgOTAuNDA0MSA0MS4xNjkxQzkwLjQxMDQgNDEuNDI2MyA5MC4zOTM3IDQxLjY5MjIgOTAuMzc5NCA0MS45NDk1QzkwLjE5NzEgNDUuMjI0IDkwLjI2MzQgNDguNTA1NSA5MC4yNTM1IDUxLjc4NUM5MC4yNDMyIDU1LjE4MDcgOTAuNDMwNCA1OC42MTY5IDkwLjAzOTEgNjIuMDAwMkM4OS44NjkzIDYzLjQ2OTIgODkuNDIwMSA2NS4xNjQ5IDg4Ljk4NzcgNjYuNTg3NUM4Ny4xMjE3IDcyLjg0OTcgODMuMzU1MSA3OC4zNzY3IDc4LjIwOTMgODIuNDAzMkM3My4yNTcgODYuMzU3OCA2Ny42OTY5IDg4LjY4NTEgNjEuMzQ5MiA4OS4xNzZDNjAuNTAyOSA4OS4yNDE0IDU5LjA4OTUgODkuMzg4MSA1OC4yODg2IDg5LjI5NzlDNTguMTE1IDk0LjU3MDEgNTguNDQ5OCAxMDAuMjcxIDU4LjE4NzEgMTA1LjQ1N0M1Ni40MTQ4IDEwNS4zNzMgNDguNjA3NyAxMDUuODEgNDcuNTM2NiAxMDUuMTY1QzQ3LjU1NDkgMTA1LjA3MyA0Ny43MjA1IDEwNC43NzcgNDcuNzIzMiAxMDQuODAzQzQ3LjU4NiAxMDMuNTI0IDQ3LjY0MTYgMTAyLjI2NSA0Ny42NTE4IDEwMC45NzlDNDcuNjc1OCA5Ny4xMTU1IDQ3LjY1OCA5My4yNTE3IDQ3LjU5ODMgODkuMzg4NEM0Ni4wNzI5IDg5LjQ4NjYgNDMuNjY1MiA4OS40MTI2IDQyLjA2NjMgODkuNDEyM0wzMS41MDE4IDg5LjQwOTVMMjEuOTcwMiA4OS40MTEzQzE5LjczMTMgODkuNDEzMiAxNy40MTM1IDg5LjQ3NjQgMTUuMTkwOCA4OS4yODI4QzE1LjIxMjcgODcuODIxIDE1LjA1MDYgODUuMzI1IDE1LjM4OTkgODQuMDI2M0MxNS44NjA3IDgyLjIzNyAxNy4yMDk3IDgwLjY0MjMgMTcuOTM3OCA3OC45ODUxQzIwLjU5OTggNzIuOTI2MSAyNC4xODA5IDY3LjQ0MzUgMjguNjA5IDYyLjUyODFDMjkuMzE5OSA2MS43Mzg5IDMwLjA1ODggNjAuNzE1OSAzMC44MTI2IDU5Ljk3NzdDMzEuOTY1OSA1OC44NDI5IDMzLjMyMTQgNTcuODA5NSAzNC41MDU1IDU2LjcyMzRDNDAuMDk5NCA1MS41OTE4IDQ2LjU1ODYgNDguMjMxNCA1My40NjY3IDQ1LjIyNjRDNTUuMTU3NyA0NC40OTA5IDU3LjcwODUgNDQuMTI3IDU5LjIxNzkgNDMuMTU5M0M1OS45ODA2IDQyLjY3MDIgNjEuMDU5MyAzOC44Mjk3IDYxLjUzMSAzNy45ODcxQzYzLjUwNzQgMzQuMTIyNyA2NC4zNjQ0IDI5Ljc1ODQgNjYuODM3OSAyNi4yMDM0QzY4LjM4NzYgMjMuOTc2MyA3MC4yMjYzIDIyLjQ4MDcgNzIuNTc3NSAyMS4xOTQ3QzczLjQ4MTkgMjAuNzAwMSA3NC45ODM2IDE5LjUxMTcgNzYuMzM4MiAxOS41MTE3Wk0zMC4zMDYxIDc4LjUxMTFDMzEuNzk3NyA3OC41ODIzIDMyLjk4ODggNzguNzA1MSAzNC41MDA5IDc4LjY4NTFMNDguODI0MSA3OC42ODU2QzUzLjk3NzcgNzguNjg1NSA1OS45NDYyIDc5LjA4NyA2NC44NTI4IDc3LjU4MTJDNjcuNDUxOCA3Ni43ODM2IDcxLjQ0MyA3NC4yNjA3IDczLjM5ODMgNzIuMjY5M0M3Ni42OTA0IDY4LjkxNjIgNzguNzkyIDY0Ljg3NCA3OS41ODA3IDYwLjIzNjJDNzkuNzcwOCA1OS4xMTgzIDc5Ljc0OSA1Ni42NjE1IDc5Ljc0ODQgNTUuNDgzNEM3OS43NDk4IDU0LjI2NzkgNzkuNzMyMyA1My4wNTI2IDc5LjY5NTcgNTEuODM3N0M3OC4zNjk2IDUxLjgwNiA3Ny4wNDI5IDUxLjgwNDEgNzUuNzE2OCA1MS44MzIyQzczLjM3ODYgNTEuOTE3NiA3MC4wMjA2IDUyLjAwNTggNjcuNzI0NiA1Mi40NzMzQzU4LjIyMjYgNTQuNDA4MyA0OC45NDM3IDU4LjIyNCA0MS42MzM0IDY0LjczMzdDNDAuNTc3NiA2NS42NzM4IDM5LjQ0NzIgNjYuNTQxOCAzOC41MjE3IDY3LjUzNjlDMzYuMDA1NiA3MC4yMjEgMzMuNzEwMSA3My4xMDM5IDMxLjY1NzYgNzYuMTU3NEMzMS4xMjIxIDc2Ljk2MjUgMzAuNzI3MyA3Ny44Nzc3IDMwLjMwNjEgNzguNTExMVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNDQuNzQgOThWNy43NTk5OUgxODMuNzhDMjA4Ljk5NiA3Ljc1OTk5IDIyMS40MTIgMTIuMTEyIDIyMS40MTIgMjkuNTJDMjIxLjQxMiA0NC43NTIgMjExLjMgNDkuMTA0IDIwNC41MTYgNTAuMzg0QzIxOS42MiA1MS43OTIgMjI4LjA2OCA1OS42IDIyOC4wNjggNzMuNjhDMjI4LjA2OCA5NC44IDIwOC45OTYgOTggMTg0LjY3NiA5OEgxNDQuNzRaTTE2OC4xNjQgNzguMTZIMTg1Ljk1NkMxOTcuODYgNzguMTYgMjA0LjUxNiA3OC41NDQgMjA0LjUxNiA2OS4wNzJDMjA0LjUxNiA1OS42IDE5Ny40NzYgNjAuMTEyIDE4NS45NTYgNjAuMTEySDE2OC4xNjRWNzguMTZaTTE2OC4xNjQgNDEuOTM2SDE4Ni4wODRDMTkzLjI1MiA0MS45MzYgMTk4Ljg4NCA0Mi40NDggMTk4Ljg4NCAzNC4yNTZDMTk4Ljg4NCAyNi4zMiAxOTMuNzY0IDI2LjQ0OCAxODYuMDg0IDI2LjQ0OEgxNjguMTY0VjQxLjkzNlpNMjM0LjA1OCA5OFY3OC42NzJIMjUyLjIzNFY1Mi41NkgyMzYuMzYyVjMzLjIzMkgyNjEuMzIyQzI2OC4zNjIgMzMuMjMyIDI3Mi40NTggMzYuODE2IDI3Mi40NTggNDMuOTg0Vjc4LjY3MkgyOTAuNzYyVjk4SDIzNC4wNThaTTI0OC4wMSAxNi41OTJDMjQ4LjAxIDkuMTY4IDI1My4wMDIgNS41ODM5OSAyNjAuODEgNS41ODM5OUMyNjguNjE4IDUuNTgzOTkgMjczLjk5NCA5LjE2OCAyNzMuOTk0IDE2LjU5MkMyNzMuOTk0IDI0LjE0NCAyNjguNjE4IDI3LjYgMjYwLjgxIDI3LjZDMjUzLjAwMiAyNy42IDI0OC4wMSAyNC4xNDQgMjQ4LjAxIDE2LjU5MlpNMjk5LjQ4MSA0NC4zNjhDMjk5LjQ4MSAzNy4wNzIgMzAzLjU3NyAzMy4yMzIgMzEwLjg3MyAzMy4yMzJIMzU0LjI2NVY1Mi41NkgzMjEuNDk3Vjk4SDI5OS40ODFWNDQuMzY4Wk0zODcuODU4IDk5LjI4QzM2Ni44NjYgOTkuMjggMzU4LjAzNCA4My43OTIgMzU4LjAzNCA2NS40ODhDMzU4LjAzNCA0Ny4zMTIgMzY2Ljg2NiAzMS45NTIgMzg3Ljg1OCAzMS45NTJDNDAxLjkzOCAzMS45NTIgNDA4Ljg1IDM4LjczNiA0MTIuNDM0IDQ1LjM5MlYzLjkySDQzNC4zMjJWOThINDEyLjQzNFY4NS43MTJDNDA4LjQ2NiA5My4wMDggNDAxLjI5OCA5OS4yOCAzODcuODU4IDk5LjI4Wk0zNzkuOTIyIDY1LjQ4OEMzNzkuOTIyIDc1LjIxNiAzODUuOTM4IDc5Ljk1MiAzOTYuMzA2IDc5Ljk1MkM0MDYuMjkgNzkuOTUyIDQxMi4zMDYgNzUuMDg4IDQxMi4zMDYgNjUuNDg4QzQxMi4zMDYgNTYuMTQ0IDQwNi4yOSA1MS4yOCAzOTYuMzA2IDUxLjI4QzM4NS45MzggNTEuMjggMzc5LjkyMiA1Ni4wMTYgMzc5LjkyMiA2NS40ODhaTTQ0My45MzMgOThWNzguNjcySDQ2Mi4xMDlWNTIuNTZINDQ2LjIzN1YzMy4yMzJINDcxLjE5N0M0NzguMjM3IDMzLjIzMiA0ODIuMzMzIDM2LjgxNiA0ODIuMzMzIDQzLjk4NFY3OC42NzJINTAwLjYzN1Y5OEg0NDMuOTMzWk00NTcuODg1IDE2LjU5MkM0NTcuODg1IDkuMTY4IDQ2Mi44NzcgNS41ODM5OSA0NzAuNjg1IDUuNTgzOTlDNDc4LjQ5MyA1LjU4Mzk5IDQ4My44NjkgOS4xNjggNDgzLjg2OSAxNi41OTJDNDgzLjg2OSAyNC4xNDQgNDc4LjQ5MyAyNy42IDQ3MC42ODUgMjcuNkM0NjIuODc3IDI3LjYgNDU3Ljg4NSAyNC4xNDQgNDU3Ljg4NSAxNi41OTJaTTUwNC41MjIgNjUuMzZDNTA0LjUyMiA0NC40OTYgNTE4Ljg1OCAzMS45NTIgNTM4Ljk1NCAzMS45NTJDNTYxLjM1NCAzMS45NTIgNTc0LjI4MiA0NC4xMTIgNTc0LjI4MiA2NC40NjRWNzAuMjI0SDUyNi41MzhDNTI3LjMwNiA3OC4yODggNTMyLjA0MiA4Mi43NjggNTM5Ljk3OCA4Mi43NjhDNTQ2Ljc2MiA4Mi43NjggNTUxLjM3IDgwLjA4IDU1Mi42NSA3NS4wODhINTc0LjQxQzU3Mi42MTggODkuNDI0IDU1OS45NDYgOTkuMjggNTM5Ljk3OCA5OS4yOEM1MTguMDkgOTkuMjggNTA0LjUyMiA4NS41ODQgNTA0LjUyMiA2NS4zNlpNNTI2LjUzOCA1OC45Nkg1NTIuOTA2QzU1Mi4yNjYgNTEuNzkyIDU0Ny4yNzQgNDcuODI0IDUzOS41OTQgNDcuODI0QzUzMi4wNDIgNDcuODI0IDUyNy4wNSA1MS43OTIgNTI2LjUzOCA1OC45NloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA2IiBoZWlnaHQ9IjEwNiIgdmlld0JveD0iMCAwIDEwNS42IDEwNS42IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8Y2lyY2xlIGN4PSI1Mi43NjIzIiBjeT0iNTIuNzYyMyIgcj0iNTIuNzYyMyIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTc2LjMzODIgMTkuNTExN0g4Mi40NTYyQzgzLjU0ODQgMTkuNTExNyA4Ni4xMTYzIDIwLjkzNjUgODcuMzU3NyAyMi41MTk1Qzg5LjYzMzIgMjUuNDIxMSA4OS45ODEzIDI2LjM5OTYgOTAuMzk5OSAyOS45NTM3QzkzLjU0MTcgMzEuOTk5MSA5Ny4yMjU2IDMzLjQ3MTMgMTAwLjU0IDM1LjIyODVDMTAwLjczNSAzNS4zMzE4IDEwMC45NzIgMzUuNTg0NyAxMDEuMTIxIDM1Ljc1QzEwMS40MDggMzcuMTE3NCAxMDEuMjQzIDM5LjUyOTMgMTAxLjI4OSA0MS4wNTE1Qzk3LjYwNjQgNDEuMDgyNCA5NC4wOTQ0IDQxLjAxNjUgOTAuNDA0MSA0MS4xNjkxQzkwLjQxMDQgNDEuNDI2MyA5MC4zOTM3IDQxLjY5MjIgOTAuMzc5NCA0MS45NDk1QzkwLjE5NzEgNDUuMjI0IDkwLjI2MzQgNDguNTA1NSA5MC4yNTM1IDUxLjc4NUM5MC4yNDMyIDU1LjE4MDcgOTAuNDMwNCA1OC42MTY5IDkwLjAzOTEgNjIuMDAwMkM4OS44NjkzIDYzLjQ2OTIgODkuNDIwMSA2NS4xNjQ5IDg4Ljk4NzcgNjYuNTg3NUM4Ny4xMjE3IDcyLjg0OTcgODMuMzU1MSA3OC4zNzY3IDc4LjIwOTMgODIuNDAzMkM3My4yNTcgODYuMzU3OCA2Ny42OTY5IDg4LjY4NTEgNjEuMzQ5MiA4OS4xNzZDNjAuNTAyOSA4OS4yNDE0IDU5LjA4OTUgODkuMzg4MSA1OC4yODg2IDg5LjI5NzlDNTguMTE1IDk0LjU3MDEgNTguNDQ5OCAxMDAuMjcxIDU4LjE4NzEgMTA1LjQ1N0M1Ni40MTQ4IDEwNS4zNzMgNDguNjA3NyAxMDUuODEgNDcuNTM2NiAxMDUuMTY1QzQ3LjU1NDkgMTA1LjA3MyA0Ny43MjA1IDEwNC43NzcgNDcuNzIzMiAxMDQuODAzQzQ3LjU4NiAxMDMuNTI0IDQ3LjY0MTYgMTAyLjI2NSA0Ny42NTE4IDEwMC45NzlDNDcuNjc1OCA5Ny4xMTU1IDQ3LjY1OCA5My4yNTE3IDQ3LjU5ODMgODkuMzg4NEM0Ni4wNzI5IDg5LjQ4NjYgNDMuNjY1MiA4OS40MTI2IDQyLjA2NjMgODkuNDEyM0wzMS41MDE4IDg5LjQwOTVMMjEuOTcwMiA4OS40MTEzQzE5LjczMTMgODkuNDEzMiAxNy40MTM1IDg5LjQ3NjQgMTUuMTkwOCA4OS4yODI4QzE1LjIxMjcgODcuODIxIDE1LjA1MDYgODUuMzI1IDE1LjM4OTkgODQuMDI2M0MxNS44NjA3IDgyLjIzNyAxNy4yMDk3IDgwLjY0MjMgMTcuOTM3OCA3OC45ODUxQzIwLjU5OTggNzIuOTI2MSAyNC4xODA5IDY3LjQ0MzUgMjguNjA5IDYyLjUyODFDMjkuMzE5OSA2MS43Mzg5IDMwLjA1ODggNjAuNzE1OSAzMC44MTI2IDU5Ljk3NzdDMzEuOTY1OSA1OC44NDI5IDMzLjMyMTQgNTcuODA5NSAzNC41MDU1IDU2LjcyMzRDNDAuMDk5NCA1MS41OTE4IDQ2LjU1ODYgNDguMjMxNCA1My40NjY3IDQ1LjIyNjRDNTUuMTU3NyA0NC40OTA5IDU3LjcwODUgNDQuMTI3IDU5LjIxNzkgNDMuMTU5M0M1OS45ODA2IDQyLjY3MDIgNjEuMDU5MyAzOC44Mjk3IDYxLjUzMSAzNy45ODcxQzYzLjUwNzQgMzQuMTIyNyA2NC4zNjQ0IDI5Ljc1ODQgNjYuODM3OSAyNi4yMDM0QzY4LjM4NzYgMjMuOTc2MyA3MC4yMjYzIDIyLjQ4MDcgNzIuNTc3NSAyMS4xOTQ3QzczLjQ4MTkgMjAuNzAwMSA3NC45ODM2IDE5LjUxMTcgNzYuMzM4MiAxOS41MTE3Wk0zMC4zMDYxIDc4LjUxMTFDMzEuNzk3NyA3OC41ODIzIDMyLjk4ODggNzguNzA1MSAzNC41MDA5IDc4LjY4NTFMNDguODI0MSA3OC42ODU2QzUzLjk3NzcgNzguNjg1NSA1OS45NDYyIDc5LjA4NyA2NC44NTI4IDc3LjU4MTJDNjcuNDUxOCA3Ni43ODM2IDcxLjQ0MyA3NC4yNjA3IDczLjM5ODMgNzIuMjY5M0M3Ni42OTA0IDY4LjkxNjIgNzguNzkyIDY0Ljg3NCA3OS41ODA3IDYwLjIzNjJDNzkuNzcwOCA1OS4xMTgzIDc5Ljc0OSA1Ni42NjE1IDc5Ljc0ODQgNTUuNDgzNEM3OS43NDk4IDU0LjI2NzkgNzkuNzMyMyA1My4wNTI2IDc5LjY5NTcgNTEuODM3N0M3OC4zNjk2IDUxLjgwNiA3Ny4wNDI5IDUxLjgwNDEgNzUuNzE2OCA1MS44MzIyQzczLjM3ODYgNTEuOTE3NiA3MC4wMjA2IDUyLjAwNTggNjcuNzI0NiA1Mi40NzMzQzU4LjIyMjYgNTQuNDA4MyA0OC45NDM3IDU4LjIyNCA0MS42MzM0IDY0LjczMzdDNDAuNTc3NiA2NS42NzM4IDM5LjQ0NzIgNjYuNTQxOCAzOC41MjE3IDY3LjUzNjlDMzYuMDA1NiA3MC4yMjEgMzMuNzEwMSA3My4xMDM5IDMxLjY1NzYgNzYuMTU3NEMzMS4xMjIxIDc2Ljk2MjUgMzAuNzI3MyA3Ny44Nzc3IDMwLjMwNjEgNzguNTExMVoiIGZpbGw9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNDQuNzQgOThWNy43NTk5OUgxODMuNzhDMjA4Ljk5NiA3Ljc1OTk5IDIyMS40MTIgMTIuMTEyIDIyMS40MTIgMjkuNTJDMjIxLjQxMiA0NC43NTIgMjExLjMgNDkuMTA0IDIwNC41MTYgNTAuMzg0QzIxOS42MiA1MS43OTIgMjI4LjA2OCA1OS42IDIyOC4wNjggNzMuNjhDMjI4LjA2OCA5NC44IDIwOC45OTYgOTggMTg0LjY3NiA5OEgxNDQuNzRaTTE2OC4xNjQgNzguMTZIMTg1Ljk1NkMxOTcuODYgNzguMTYgMjA0LjUxNiA3OC41NDQgMjA0LjUxNiA2OS4wNzJDMjA0LjUxNiA1OS42IDE5Ny40NzYgNjAuMTEyIDE4NS45NTYgNjAuMTEySDE2OC4xNjRWNzguMTZaTTE2OC4xNjQgNDEuOTM2SDE4Ni4wODRDMTkzLjI1MiA0MS45MzYgMTk4Ljg4NCA0Mi40NDggMTk4Ljg4NCAzNC4yNTZDMTk4Ljg4NCAyNi4zMiAxOTMuNzY0IDI2LjQ0OCAxODYuMDg0IDI2LjQ0OEgxNjguMTY0VjQxLjkzNlpNMjM0LjA1OCA5OFY3OC42NzJIMjUyLjIzNFY1Mi41NkgyMzYuMzYyVjMzLjIzMkgyNjEuMzIyQzI2OC4zNjIgMzMuMjMyIDI3Mi40NTggMzYuODE2IDI3Mi40NTggNDMuOTg0Vjc4LjY3MkgyOTAuNzYyVjk4SDIzNC4wNThaTTI0OC4wMSAxNi41OTJDMjQ4LjAxIDkuMTY4IDI1My4wMDIgNS41ODM5OSAyNjAuODEgNS41ODM5OUMyNjguNjE4IDUuNTgzOTkgMjczLjk5NCA5LjE2OCAyNzMuOTk0IDE2LjU5MkMyNzMuOTk0IDI0LjE0NCAyNjguNjE4IDI3LjYgMjYwLjgxIDI3LjZDMjUzLjAwMiAyNy42IDI0OC4wMSAyNC4xNDQgMjQ4LjAxIDE2LjU5MlpNMjk5LjQ4MSA0NC4zNjhDMjk5LjQ4MSAzNy4wNzIgMzAzLjU3NyAzMy4yMzIgMzEwLjg3MyAzMy4yMzJIMzU0LjI2NVY1Mi41NkgzMjEuNDk3Vjk4SDI5OS40ODFWNDQuMzY4Wk0zODcuODU4IDk5LjI4QzM2Ni44NjYgOTkuMjggMzU4LjAzNCA4My43OTIgMzU4LjAzNCA2NS40ODhDMzU4LjAzNCA0Ny4zMTIgMzY2Ljg2NiAzMS45NTIgMzg3Ljg1OCAzMS45NTJDNDAxLjkzOCAzMS45NTIgNDA4Ljg1IDM4LjczNiA0MTIuNDM0IDQ1LjM5MlYzLjkySDQzNC4zMjJWOThINDEyLjQzNFY4NS43MTJDNDA4LjQ2NiA5My4wMDggNDAxLjI5OCA5OS4yOCAzODcuODU4IDk5LjI4Wk0zNzkuOTIyIDY1LjQ4OEMzNzkuOTIyIDc1LjIxNiAzODUuOTM4IDc5Ljk1MiAzOTYuMzA2IDc5Ljk1MkM0MDYuMjkgNzkuOTUyIDQxMi4zMDYgNzUuMDg4IDQxMi4zMDYgNjUuNDg4QzQxMi4zMDYgNTYuMTQ0IDQwNi4yOSA1MS4yOCAzOTYuMzA2IDUxLjI4QzM4NS45MzggNTEuMjggMzc5LjkyMiA1Ni4wMTYgMzc5LjkyMiA2NS40ODhaTTQ0My45MzMgOThWNzguNjcySDQ2Mi4xMDlWNTIuNTZINDQ2LjIzN1YzMy4yMzJINDcxLjE5N0M0NzguMjM3IDMzLjIzMiA0ODIuMzMzIDM2LjgxNiA0ODIuMzMzIDQzLjk4NFY3OC42NzJINTAwLjYzN1Y5OEg0NDMuOTMzWk00NTcuODg1IDE2LjU5MkM0NTcuODg1IDkuMTY4IDQ2Mi44NzcgNS41ODM5OSA0NzAuNjg1IDUuNTgzOTlDNDc4LjQ5MyA1LjU4Mzk5IDQ4My44NjkgOS4xNjggNDgzLjg2OSAxNi41OTJDNDgzLjg2OSAyNC4xNDQgNDc4LjQ5MyAyNy42IDQ3MC42ODUgMjcuNkM0NjIuODc3IDI3LjYgNDU3Ljg4NSAyNC4xNDQgNDU3Ljg4NSAxNi41OTJaTTUwNC41MjIgNjUuMzZDNTA0LjUyMiA0NC40OTYgNTE4Ljg1OCAzMS45NTIgNTM4Ljk1NCAzMS45NTJDNTYxLjM1NCAzMS45NTIgNTc0LjI4MiA0NC4xMTIgNTc0LjI4MiA2NC40NjRWNzAuMjI0SDUyNi41MzhDNTI3LjMwNiA3OC4yODggNTMyLjA0MiA4Mi43NjggNTM5Ljk3OCA4Mi43NjhDNTQ2Ljc2MiA4Mi43NjggNTUxLjM3IDgwLjA4IDU1Mi42NSA3NS4wODhINTc0LjQxQzU3Mi42MTggODkuNDI0IDU1OS45NDYgOTkuMjggNTM5Ljk3OCA5OS4yOEM1MTguMDkgOTkuMjggNTA0LjUyMiA4NS41ODQgNTA0LjUyMiA2NS4zNlpNNTI2LjUzOCA1OC45Nkg1NTIuOTA2QzU1Mi4yNjYgNTEuNzkyIDU0Ny4yNzQgNDcuODI0IDUzOS41OTQgNDcuODI0QzUzMi4wNDIgNDcuODI0IDUyNy4wNSA1MS43OTIgNTI2LjUzOCA1OC45NloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=">
+<link rel="manifest" href='data:application/manifest+json,{"name":"Birdie","short_name":"Birdie","display":"standalone","start_url":".","background_color":"%230e0e0e","theme_color":"%230e0e0e"}'>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=Cal+Sans&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#0e0e0e; --card:#171716; --ink:#f5f5f3; --sub:#9a988f; --faint:#54524c;
+    --green:#57c98d; --red:#e0705a; --lav:#b9bef5;
+    --disp:'Cal Sans','Helvetica Neue',Helvetica,sans-serif;
+    --hair:rgba(255,255,255,.09); --hair2:rgba(255,255,255,.05);
+    --green-soft:rgba(87,201,141,.13); --red-soft:rgba(224,112,90,.14);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body {
+    font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); min-height:100vh;
+    background-image: radial-gradient(rgba(255,255,255,.045) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .wrap { max-width:430px; margin:0 auto; padding:30px 24px 130px; position:relative; z-index:1; }
+  #topo { position:fixed; inset:0; width:100%; height:100%; pointer-events:none; z-index:0; opacity:.4; }
+
+  .eyebrow { font-family:'IBM Plex Mono',ui-monospace,monospace; font-size:0.6rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--sub); }
+  .eyebrow.grn { color:var(--green); }
+
+  header { padding:4px 0 26px; display:flex; justify-content:space-between; align-items:flex-start; gap:14px; }
+  header h1 { font-family:var(--disp); font-weight:600; font-size:2.7rem; letter-spacing:-0.03em; line-height:1; margin-top:30px; }
+  header .sub { color:var(--sub); font-size:0.9rem; margin-top:10px; font-weight:500; }
+  .affirm { font-family:'IBM Plex Mono',monospace; font-size:0.66rem; color:var(--sub); margin-top:16px; line-height:1.8; letter-spacing:0.05em; text-transform:uppercase; }
+  #wx { display:none; text-align:right; flex-shrink:0; padding-top:4px; }
+
+  .bottomnav { position:fixed; bottom:0; left:0; right:0; z-index:50; background:rgba(14,14,14,.92); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-top:1px solid var(--hair); }
+  .bottomnav .inner { max-width:430px; margin:0 auto; display:flex; padding:10px 24px calc(12px + env(safe-area-inset-bottom)); }
+  .bottomnav button { flex:1; background:none; border:none; cursor:pointer; display:flex; flex-direction:column; align-items:center; gap:6px; color:var(--faint); transition:color .15s; padding:4px 0; }
+  .bottomnav button svg { width:21px; height:21px; stroke:currentColor; fill:none; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+  .bottomnav button .bl { font-family:'IBM Plex Mono',monospace; font-size:0.5rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; }
+  .bottomnav button.active { color:var(--green); }
+  #view { animation:pagein .22s ease; }
+  @keyframes pagein { from { opacity:0; transform:translateY(6px); } to { opacity:1; transform:none; } }
+
+  .idx { border-top:1px solid var(--hair); }
+  .idx button { width:100%; display:flex; align-items:center; gap:18px; padding:28px 2px; background:none; border:none; border-bottom:1px solid var(--hair); cursor:pointer; font-family:inherit; text-align:left; }
+  .idx .no { font-family:'IBM Plex Mono',monospace; font-size:0.62rem; font-weight:600; color:var(--faint); letter-spacing:0.12em; width:26px; }
+  .idx .t { font-family:var(--disp); font-size:1.5rem; font-weight:600; letter-spacing:-0.02em; color:#e2e0da; flex:1; transition:color .15s; }
+  .idx .s { display:block; font-family:'IBM Plex Mono',monospace; font-size:0.58rem; font-weight:500; color:var(--sub); letter-spacing:0.1em; text-transform:uppercase; margin-top:8px; }
+  .idx .ar { color:var(--faint); font-size:1.1rem; transition:all .15s; }
+  .idx button:active .t { color:var(--ink); }
+  .idx button:active .ar { color:var(--green); transform:translateX(3px); }
+
+  .sec { border-top:1px solid var(--hair); padding:24px 0 28px; }
+  .sec:first-child { border-top:none; padding-top:0; }
+
+  label.fld { display:block; font-family:'IBM Plex Mono',monospace; font-size:0.56rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--sub); margin:20px 0 8px; }
+  input[type=text], input[type=date], select, textarea { width:100%; padding:14px; border:1px solid var(--hair); border-radius:12px; background:var(--card); font-family:inherit; font-size:1rem; font-weight:600; color:var(--ink); appearance:none; }
+  input:focus, select:focus, textarea:focus { outline:none; border-color:var(--green); }
+  select option { background:#1d1d1c; color:var(--ink); }
+  textarea { resize:vertical; min-height:56px; font-weight:500; line-height:1.5; }
+  ::placeholder { color:var(--faint); }
+
+  .pills { display:flex; gap:8px; flex-wrap:wrap; }
+  .pill { padding:13px 0; flex:1; min-width:44px; border:1px solid var(--hair); background:var(--card); border-radius:12px; font-family:inherit; font-size:1.05rem; font-weight:800; letter-spacing:-0.02em; color:var(--sub); cursor:pointer; text-align:center; transition:all .12s; }
+  .pill.sel { border-color:var(--ink); color:#0e0e0e; background:var(--ink); }
+  .pill.grn { border-color:var(--green); color:#0e1f15; background:var(--green); }
+  .pill small { display:block; font-family:'IBM Plex Mono',monospace; font-size:0.48rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; opacity:.75; margin-top:3px; }
+  .tgl2 { flex:1; padding:15px 0; border:1px solid var(--hair); background:var(--card); border-radius:12px; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--faint); cursor:pointer; transition:all .12s; }
+  .tgl2.on { border-color:var(--green); color:var(--green); background:var(--green-soft); }
+
+  .wiz-head { display:flex; align-items:flex-end; justify-content:space-between; }
+  .wiz-head .hole { font-family:var(--disp); font-weight:600; font-size:3.2rem; letter-spacing:-0.04em; line-height:0.95; }
+  .wiz-head .hole em { font-style:normal; font-family:'IBM Plex Mono',monospace; font-size:0.6rem; color:var(--faint); font-weight:600; letter-spacing:0.22em; text-transform:uppercase; display:block; margin-bottom:10px; }
+  .wiz-head .run { text-align:right; padding-bottom:4px; }
+  .wiz-head .run .v { font-family:var(--disp); font-size:2rem; font-weight:600; letter-spacing:-0.02em; }
+  .wiz-head .run .k { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--sub); margin-top:4px; }
+  .dots { display:flex; gap:3px; margin:22px 0 6px; }
+  .dots i { flex:1; height:3px; border-radius:2px; background:var(--hair); }
+  .dots i.done { background:var(--green); }
+  .dots i.cur { background:var(--lav); }
+  .wiz-nav { display:flex; gap:12px; margin-top:26px; }
+
+  .btn { flex:1; padding:16px; background:var(--ink); color:#0e0e0e; border:none; border-radius:999px; font-family:inherit; font-size:0.9rem; font-weight:700; cursor:pointer; transition:transform .12s; }
+  .btn:active { transform:scale(.98); }
+  .btn.lite { background:transparent; color:var(--ink); border:1px solid var(--hair); }
+  .btn.green { background:var(--lav); color:#14142a; }
+  .btn.txt { background:transparent; color:var(--faint); font-family:'IBM Plex Mono',monospace; font-size:0.58rem; letter-spacing:0.14em; text-transform:uppercase; padding:10px; border:none; border-radius:0; }
+
+  .sc-scroll { overflow-x:auto; margin:0 -24px; padding:0 24px; }
+  table.sc { border-collapse:collapse; font-size:0.78rem; min-width:100%; }
+  table.sc th, table.sc td { padding:8px; text-align:center; white-space:nowrap; font-weight:600; }
+  table.sc thead th { font-family:'IBM Plex Mono',monospace; color:var(--faint); font-weight:600; font-size:0.5rem; letter-spacing:0.14em; text-transform:uppercase; border-bottom:1px solid var(--hair); }
+  table.sc tbody th { font-family:'IBM Plex Mono',monospace; text-align:left; color:var(--faint); font-weight:600; font-size:0.5rem; letter-spacing:0.14em; text-transform:uppercase; padding-right:14px; }
+  table.sc tbody tr { border-bottom:1px solid var(--hair2); }
+  table.sc td.tot { font-weight:800; color:var(--ink); }
+  .sc-badge { display:inline-flex; width:26px; height:26px; align-items:center; justify-content:center; border-radius:50%; font-weight:800; }
+  .sc-badge.birdie { background:var(--green-soft); color:var(--green); }
+  .sc-badge.bogey { background:rgba(216,178,92,.14); color:#d8b25c; }
+  .sc-badge.dbl { background:var(--red-soft); color:var(--red); }
+
+  .entry-row { display:flex; align-items:center; gap:12px; padding:14px 0; flex-wrap:wrap; border-bottom:1px solid var(--hair2); }
+  .entry-row:last-of-type { border-bottom:none; }
+  .mini-lbl { font-family:'IBM Plex Mono',monospace; font-size:0.48rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--faint); text-align:center; margin-bottom:5px; }
+  .stepper { display:inline-flex; align-items:center; border:1px solid var(--hair); border-radius:10px; background:var(--card); overflow:hidden; }
+  .stepper button { width:38px; height:40px; border:none; background:transparent; font-size:1.2rem; font-weight:600; color:var(--sub); cursor:pointer; }
+  .stepper span { min-width:32px; text-align:center; font-weight:800; font-size:1.05rem; }
+
+  .sess { display:flex; justify-content:space-between; align-items:center; padding:20px 2px; border-bottom:1px solid var(--hair); cursor:pointer; }
+  .sess .l .t { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; font-weight:600; letter-spacing:0.24em; text-transform:uppercase; color:var(--green); }
+  .sess .l .d { font-family:var(--disp); font-size:1.1rem; font-weight:600; letter-spacing:-0.01em; color:#e2e0da; margin-top:7px; }
+  .sess .l .n { font-size:0.8rem; color:var(--sub); margin-top:6px; font-style:italic; }
+  .sess .r { text-align:right; display:flex; align-items:center; gap:14px; }
+  .sess .big { font-family:var(--disp); font-size:1.8rem; font-weight:600; letter-spacing:-0.02em; }
+  .sess .subv { font-family:'IBM Plex Mono',monospace; font-size:0.5rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--sub); margin-top:3px; }
+  .sess .del { background:none; border:none; color:var(--faint); font-size:0.95rem; cursor:pointer; padding:4px; }
+  .sess-detail { padding:6px 0 22px; border-bottom:1px solid var(--hair); }
+
+  .bignum-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .bignum { background:var(--card); border:1px solid var(--hair2); border-radius:14px; padding:16px 14px; }
+  .bignum .v { font-family:var(--disp); font-size:2.1rem; font-weight:600; letter-spacing:-0.03em; line-height:1; }
+  .bignum .v.grn { color:var(--green); }
+  .bignum .k { font-family:'IBM Plex Mono',monospace; font-size:0.48rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--sub); margin-top:10px; line-height:1.7; }
+  .bench { display:flex; align-items:baseline; justify-content:space-between; padding:16px 0; border-bottom:1px solid var(--hair2); }
+  .bench .n { font-size:0.88rem; font-weight:700; }
+  .bench .n small { display:block; font-family:'IBM Plex Mono',monospace; font-size:0.5rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--faint); margin-top:5px; }
+  .bench .r { display:flex; align-items:baseline; gap:10px; }
+  .bench .v { font-family:var(--disp); font-size:1.35rem; font-weight:600; }
+  .gap { font-family:'IBM Plex Mono',monospace; font-size:0.58rem; font-weight:600; padding:4px 9px; border-radius:999px; }
+  .gap.up { background:var(--green-soft); color:var(--green); }
+  .gap.dn { background:var(--red-soft); color:var(--red); }
+  .hbar { margin:14px 0; }
+  .hbar .lbl { display:flex; justify-content:space-between; font-size:0.8rem; font-weight:700; margin-bottom:7px; }
+  .hbar .lbl span:last-child { font-family:'IBM Plex Mono',monospace; color:var(--sub); font-weight:500; font-size:0.64rem; }
+  .hbar .trk { height:3px; background:var(--hair); border-radius:2px; overflow:hidden; }
+  .hbar .fil { height:100%; background:var(--green); border-radius:2px; transition:width .4s; }
+  .bars { display:flex; align-items:flex-end; gap:6px; height:82px; margin-top:26px; }
+  .bars .b { flex:1; border-radius:3px 3px 0 0; position:relative; min-height:4px; }
+  .bars .b span { position:absolute; top:-18px; left:50%; transform:translateX(-50%); font-family:'IBM Plex Mono',monospace; font-size:0.58rem; font-weight:600; }
+  .coach { display:flex; gap:16px; padding:16px 0; border-bottom:1px solid var(--hair2); align-items:flex-start; }
+  .coach:last-child { border-bottom:none; }
+  .coach .no { font-family:'IBM Plex Mono',monospace; font-size:0.54rem; font-weight:600; color:var(--green); letter-spacing:0.1em; padding-top:4px; }
+  .coach p { font-size:0.88rem; line-height:1.6; font-weight:500; color:#c9c7c0; }
+  .coach p b { font-weight:800; color:var(--ink); }
+  .radar-wrap { display:flex; justify-content:center; padding:6px 0 2px; }
+  .empty { text-align:center; padding:54px 20px; color:var(--faint); font-family:'IBM Plex Mono',monospace; font-size:0.66rem; letter-spacing:0.1em; text-transform:uppercase; line-height:2; }
+  .toast { position:fixed; bottom:92px; left:50%; transform:translateX(-50%); background:var(--ink); color:#0e0e0e; padding:12px 26px; border-radius:999px; font-family:'IBM Plex Mono',monospace; font-size:0.58rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; opacity:0; transition:opacity .3s; pointer-events:none; z-index:99; }
+  .toast.show { opacity:1; }
+</style>
+</head>
+<body>
+<svg id="topo" viewBox="0 0 430 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <g fill="none" stroke="#57c98d" stroke-opacity="0.05" stroke-width="1.1">
+    <path d="M-40 160 C60 120, 170 180, 240 140 S 400 90, 480 140"/>
+    <path d="M-40 190 C70 145, 175 210, 250 168 S 405 118, 480 172"/>
+    <path d="M-40 222 C80 172, 180 242, 262 198 S 410 148, 480 206"/>
+    <path d="M-40 256 C90 202, 188 276, 274 230 S 415 180, 480 242"/>
+    <ellipse cx="300" cy="560" rx="150" ry="95" transform="rotate(-14 300 560)"/>
+    <ellipse cx="300" cy="560" rx="118" ry="72" transform="rotate(-14 300 560)"/>
+    <ellipse cx="302" cy="558" rx="88" ry="52" transform="rotate(-14 302 558)"/>
+    <ellipse cx="304" cy="556" rx="60" ry="34" transform="rotate(-14 304 556)"/>
+    <ellipse cx="306" cy="554" rx="34" ry="18" transform="rotate(-14 306 554)"/>
+    <path d="M60 760 C120 700, 90 660, 150 620 S 240 600, 306 556" stroke-dasharray="1 7" stroke-width="1.6"/>
+    <ellipse cx="120" cy="810" rx="90" ry="55" transform="rotate(10 120 810)"/>
+    <ellipse cx="122" cy="808" rx="62" ry="36" transform="rotate(10 122 808)"/>
+    <ellipse cx="124" cy="806" rx="36" ry="20" transform="rotate(10 124 806)"/>
+  </g>
+</svg>
+<div class="wrap">
+  <header>
+    <div style="flex:1;min-width:0;">
+      <div><svg height="28" viewBox="0 0 579 131" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="52.7623" cy="52.7623" r="52.7623" fill="white"/>
+<path d="M76.3382 19.5117H82.4562C83.5484 19.5117 86.1163 20.9365 87.3577 22.5195C89.6332 25.4211 89.9813 26.3996 90.3999 29.9537C93.5417 31.9991 97.2256 33.4713 100.54 35.2285C100.735 35.3318 100.972 35.5847 101.121 35.75C101.408 37.1174 101.243 39.5293 101.289 41.0515C97.6064 41.0824 94.0944 41.0165 90.4041 41.1691C90.4104 41.4263 90.3937 41.6922 90.3794 41.9495C90.1971 45.224 90.2634 48.5055 90.2535 51.785C90.2432 55.1807 90.4304 58.6169 90.0391 62.0002C89.8693 63.4692 89.4201 65.1649 88.9877 66.5875C87.1217 72.8497 83.3551 78.3767 78.2093 82.4032C73.257 86.3578 67.6969 88.6851 61.3492 89.176C60.5029 89.2414 59.0895 89.3881 58.2886 89.2979C58.115 94.5701 58.4498 100.271 58.1871 105.457C56.4148 105.373 48.6077 105.81 47.5366 105.165C47.5549 105.073 47.7205 104.777 47.7232 104.803C47.586 103.524 47.6416 102.265 47.6518 100.979C47.6758 97.1155 47.658 93.2517 47.5983 89.3884C46.0729 89.4866 43.6652 89.4126 42.0663 89.4123L31.5018 89.4095L21.9702 89.4113C19.7313 89.4132 17.4135 89.4764 15.1908 89.2828C15.2127 87.821 15.0506 85.325 15.3899 84.0263C15.8607 82.237 17.2097 80.6423 17.9378 78.9851C20.5998 72.9261 24.1809 67.4435 28.609 62.5281C29.3199 61.7389 30.0588 60.7159 30.8126 59.9777C31.9659 58.8429 33.3214 57.8095 34.5055 56.7234C40.0994 51.5918 46.5586 48.2314 53.4667 45.2264C55.1577 44.4909 57.7085 44.127 59.2179 43.1593C59.9806 42.6702 61.0593 38.8297 61.531 37.9871C63.5074 34.1227 64.3644 29.7584 66.8379 26.2034C68.3876 23.9763 70.2263 22.4807 72.5775 21.1947C73.4819 20.7001 74.9836 19.5117 76.3382 19.5117ZM30.3061 78.5111C31.7977 78.5823 32.9888 78.7051 34.5009 78.6851L48.8241 78.6856C53.9777 78.6855 59.9462 79.087 64.8528 77.5812C67.4518 76.7836 71.443 74.2607 73.3983 72.2693C76.6904 68.9162 78.792 64.874 79.5807 60.2362C79.7708 59.1183 79.749 56.6615 79.7484 55.4834C79.7498 54.2679 79.7323 53.0526 79.6957 51.8377C78.3696 51.806 77.0429 51.8041 75.7168 51.8322C73.3786 51.9176 70.0206 52.0058 67.7246 52.4733C58.2226 54.4083 48.9437 58.224 41.6334 64.7337C40.5776 65.6738 39.4472 66.5418 38.5217 67.5369C36.0056 70.221 33.7101 73.1039 31.6576 76.1574C31.1221 76.9625 30.7273 77.8777 30.3061 78.5111Z" fill="black"/>
+<path d="M144.74 98V7.75999H183.78C208.996 7.75999 221.412 12.112 221.412 29.52C221.412 44.752 211.3 49.104 204.516 50.384C219.62 51.792 228.068 59.6 228.068 73.68C228.068 94.8 208.996 98 184.676 98H144.74ZM168.164 78.16H185.956C197.86 78.16 204.516 78.544 204.516 69.072C204.516 59.6 197.476 60.112 185.956 60.112H168.164V78.16ZM168.164 41.936H186.084C193.252 41.936 198.884 42.448 198.884 34.256C198.884 26.32 193.764 26.448 186.084 26.448H168.164V41.936ZM234.058 98V78.672H252.234V52.56H236.362V33.232H261.322C268.362 33.232 272.458 36.816 272.458 43.984V78.672H290.762V98H234.058ZM248.01 16.592C248.01 9.168 253.002 5.58399 260.81 5.58399C268.618 5.58399 273.994 9.168 273.994 16.592C273.994 24.144 268.618 27.6 260.81 27.6C253.002 27.6 248.01 24.144 248.01 16.592ZM299.481 44.368C299.481 37.072 303.577 33.232 310.873 33.232H354.265V52.56H321.497V98H299.481V44.368ZM387.858 99.28C366.866 99.28 358.034 83.792 358.034 65.488C358.034 47.312 366.866 31.952 387.858 31.952C401.938 31.952 408.85 38.736 412.434 45.392V3.92H434.322V98H412.434V85.712C408.466 93.008 401.298 99.28 387.858 99.28ZM379.922 65.488C379.922 75.216 385.938 79.952 396.306 79.952C406.29 79.952 412.306 75.088 412.306 65.488C412.306 56.144 406.29 51.28 396.306 51.28C385.938 51.28 379.922 56.016 379.922 65.488ZM443.933 98V78.672H462.109V52.56H446.237V33.232H471.197C478.237 33.232 482.333 36.816 482.333 43.984V78.672H500.637V98H443.933ZM457.885 16.592C457.885 9.168 462.877 5.58399 470.685 5.58399C478.493 5.58399 483.869 9.168 483.869 16.592C483.869 24.144 478.493 27.6 470.685 27.6C462.877 27.6 457.885 24.144 457.885 16.592ZM504.522 65.36C504.522 44.496 518.858 31.952 538.954 31.952C561.354 31.952 574.282 44.112 574.282 64.464V70.224H526.538C527.306 78.288 532.042 82.768 539.978 82.768C546.762 82.768 551.37 80.08 552.65 75.088H574.41C572.618 89.424 559.946 99.28 539.978 99.28C518.09 99.28 504.522 85.584 504.522 65.36ZM526.538 58.96H552.906C552.266 51.792 547.274 47.824 539.594 47.824C532.042 47.824 527.05 51.792 526.538 58.96Z" fill="white"/>
+</svg></div>
+      <div style="display:flex;align-items:flex-end;gap:10px;margin-top:30px;"><h1 id="hi" style="margin-top:0;">Hi, Mano.</h1><span style="font-size:1.7rem;line-height:1;margin-bottom:3px;">🏌️</span></div>
+      <p class="sub" id="greet">Log your golf.</p>
+      <p id="affirm" class="affirm"></p>
+    </div>
+    <div id="wx"></div>
+  </header>
+  <div id="view"></div>
+</div>
+<nav class="bottomnav"><div class="inner">
+  <button id="tab-log" class="active" onclick="setTab('log')">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="12" y1="8.5" x2="12" y2="15.5"/><line x1="8.5" y1="12" x2="15.5" y2="12"/></svg>
+    <span class="bl">Log</span>
+  </button>
+  <button id="tab-history" onclick="setTab('history')">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7.5 12 12 15 14"/></svg>
+    <span class="bl">History</span>
+  </button>
+  <button id="tab-stats" onclick="setTab('stats')">
+    <svg viewBox="0 0 24 24"><line x1="6" y1="19" x2="6" y2="12"/><line x1="12" y1="19" x2="12" y2="6"/><line x1="18" y1="19" x2="18" y2="10"/></svg>
+    <span class="bl">Stats</span>
+  </button>
+</div></nav>
+<div class="toast" id="toast"></div>
+<script>
+const store = {
+  async get(k){
+    if (window.storage) return window.storage.get(k);
+    const v = localStorage.getItem(k);
+    return v !== null ? {value: v} : null;
+  },
+  async set(k,v){
+    if (window.storage) return window.storage.set(k,v);
+    localStorage.setItem(k,v);
+    return {key:k};
+  }
+};
+let sessions = [], tab = 'log', draft = null, courseFilter = 'all', expanded = null;
+const CLUBS = ['Driver','3W','5W','Hybrid','4i','5i','6i','7i','8i','9i','PW','GW','SW','LW'];
+const DISTS = ['3 ft','6 ft','10 ft','20+ ft'];
+const MISSES = ['Straight','Left','Right','Fat','Thin'];
+const TEES = ['Driver','Wood/Hyb','Iron'];
+const PGA = {3:{avg:3.06,gir:60.04,bird:13.45},4:{avg:4.05,gir:60.32,bird:16.35},5:{avg:4.67,gir:77.38,bird:42.01}};
+const AFFIRM = [
+  "Every swing today is information. You're always learning.",
+  "You don't chase the score, you build it, one shot at a time.",
+  "The short game is where quiet players win loudly.",
+  "Every tee box is a fresh start.",
+  "Consistency beats brilliance over 18 holes. Every time.",
+  "Trust the practice. It's already in your hands.",
+  "Tempo, not force. The ball goes further when you're calm.",
+  "Great rounds are built on boring pars.",
+  "You've made this putt a hundred times in practice.",
+  "Patience today, rewards tomorrow.",
+  "One target, one shot, one breath.",
+  "Every day on the course makes you better.",
+  "Fairways love a committed swing.",
+  "Your best golf is ahead of you.",
+  "Play the shot in front of you. That's the only one that matters.",
+  "Small improvements every day become low rounds.",
+  "Confidence is earned in practice and spent on the course.",
+  "Let the club do the work, you just deliver it.",
+  "A relaxed grip travels further than a tight one.",
+  "Today's practice is next month's advantage.",
+  "Champions are made on days no one is watching.",
+  "The green rewards a golfer with a plan.",
+  "Smart golf is winning golf.",
+  "Your rhythm is your signature. Trust it.",
+  "Every round is a fresh scorecard and a fresh mind.",
+  "Process over outcome, the scores follow.",
+  "You are one good habit away from your best golf.",
+  "Slow is smooth, and smooth is far.",
+  "Swing free. The ball loves confidence.",
+  "Show up. Swing well. Let the rest happen.",
+  "Golf rewards the player who stays present."
+];
+
+async function load(){
+  try { const r = await store.get('golf-sessions'); sessions = r ? JSON.parse(r.value) : []; }
+  catch(e){ sessions = []; }
+  greet(); weather(); render();
+}
+async function save(){
+  try { await store.set('golf-sessions', JSON.stringify(sessions)); }
+  catch(e){ toast('Save failed'); }
+}
+function greet(){
+  const day = Math.floor(Date.now()/86400000);
+  document.getElementById('affirm').textContent = '"' + AFFIRM[day % AFFIRM.length] + '"';
+}
+async function weather(){
+  const el = document.getElementById('wx');
+  const codes = {0:['\u2600\uFE0F','Clear'],1:['\uD83C\uDF24\uFE0F','Mostly clear'],2:['\u26C5','Partly cloudy'],3:['\u2601\uFE0F','Cloudy'],45:['\uD83C\uDF2B\uFE0F','Fog'],48:['\uD83C\uDF2B\uFE0F','Fog'],51:['\uD83C\uDF26\uFE0F','Drizzle'],53:['\uD83C\uDF26\uFE0F','Drizzle'],55:['\uD83C\uDF26\uFE0F','Drizzle'],61:['\uD83C\uDF27\uFE0F','Light rain'],63:['\uD83C\uDF27\uFE0F','Rain'],65:['\uD83C\uDF27\uFE0F','Heavy rain'],71:['\uD83C\uDF28\uFE0F','Snow'],80:['\uD83C\uDF26\uFE0F','Showers'],81:['\uD83C\uDF27\uFE0F','Showers'],82:['\u26C8\uFE0F','Heavy showers'],95:['\u26C8\uFE0F','Storm'],96:['\u26C8\uFE0F','Storm'],99:['\u26C8\uFE0F','Storm']};
+  const show = async (lat,lon)=>{
+    try {
+      const r = await fetch('https://api.open-meteo.com/v1/forecast?latitude='+lat+'&longitude='+lon+'&current=temperature_2m,weather_code');
+      const j = await r.json();
+      const c = j.current;
+      const pair = codes[c.weather_code] || ['\uD83C\uDF21\uFE0F',''];
+      const ds = new Date().toLocaleDateString(undefined,{day:'numeric',month:'short'});
+      el.innerHTML = '<div style="font-size:1.5rem;line-height:1;">'+pair[0]+'</div>'+
+        '<div style="font-family:var(--disp);font-weight:600;font-size:1.15rem;margin-top:6px;">'+Math.round(c.temperature_2m)+'\u00B0</div>'+
+        '<div class="eyebrow" style="margin-top:5px;">'+pair[1]+'</div>'+
+        '<div class="eyebrow" style="margin-top:3px;color:var(--faint);">'+ds+'</div>';
+      el.style.display = 'block';
+    } catch(e){}
+  };
+  if (navigator.geolocation) navigator.geolocation.getCurrentPosition(p=>show(p.coords.latitude,p.coords.longitude),()=>show(26.91,75.79),{timeout:3000});
+  else show(26.91,75.79);
+}
+function toast(m){ const t=document.getElementById('toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),1800); }
+function today(){ return new Date().toISOString().slice(0,10); }
+function fmtDate(d){ return new Date(d+'T12:00').toLocaleDateString(undefined,{weekday:'short',month:'short',day:'numeric'}); }
+function esc(s){ return (s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+function setTab(t){
+  tab=t; expanded=null;
+  document.querySelectorAll('.bottomnav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById('tab-'+t).classList.add('active');
+  render(); window.scrollTo({top:0});
+}
+function render(){
+  const v = document.getElementById('view');
+  v.style.animation='none'; void v.offsetWidth; v.style.animation='';
+  if (tab==='log') v.innerHTML = renderLog();
+  else if (tab==='history') v.innerHTML = renderHistory();
+  else v.innerHTML = renderStats();
+}
+
+/* ---------- LOG ---------- */
+function renderLog(){
+  if (!draft) return '<div class="idx">'+
+    '<button onclick="startDraft(\'round\')"><span class="no">01</span><span style="flex:1;"><span class="t">Play a Round</span><span class="s">9 or 18 holes / hole by hole</span></span><span class="ar">&rarr;</span></button>'+
+    '<button onclick="startDraft(\'putting\')"><span class="no">02</span><span style="flex:1;"><span class="t">Putting Practice</span><span class="s">Make % by distance</span></span><span class="ar">&rarr;</span></button>'+
+    '<button onclick="startDraft(\'range\')"><span class="no">03</span><span style="flex:1;"><span class="t">Range Session</span><span class="s">Ball striking by club</span></span><span class="ar">&rarr;</span></button>'+
+    '</div>';
+  if (draft.type==='round') return draft.review ? renderReview() : renderWizard();
+  if (draft.type==='putting') return renderPuttingForm();
+  return renderRangeForm();
+}
+function startDraft(type){
+  if (type==='round') draft={type:type,date:today(),course:'',holes:Array.from({length:18},()=>({par:4,score:0,putts:2,fir:null,gir:false,tee:'',note:''})),count:18,cur:-1,review:false,notes:''};
+  if (type==='putting') draft={type:type,date:today(),drills:[{dist:'6 ft',att:10,made:0}],notes:''};
+  if (type==='range') draft={type:type,date:today(),clubs:[{club:'7i',shots:10,good:0,miss:'Straight'}],notes:''};
+  render();
+}
+function cancelDraft(){ draft=null; render(); toast('Discarded'); }
+function setH(i,k,v){ draft.holes[i][k]=v; render(); }
+function nextHole(){ draft.cur++; render(); window.scrollTo({top:0,behavior:'smooth'}); }
+
+function renderWizard(){
+  if (draft.cur === -1){
+    return '<div class="sec">'+
+      '<div class="eyebrow grn">01 &mdash; New Round</div>'+
+      '<label class="fld">Date</label><input type="date" value="'+draft.date+'" onchange="draft.date=this.value">'+
+      '<label class="fld">Golf Course</label><input type="text" placeholder="e.g. Rambagh" value="'+esc(draft.course)+'" onchange="draft.course=this.value">'+
+      '<label class="fld">Holes</label><div class="pills">'+
+        '<button class="pill '+(draft.count===9?'sel':'')+'" onclick="draft.count=9;render()">9</button>'+
+        '<button class="pill '+(draft.count===18?'sel':'')+'" onclick="draft.count=18;render()">18</button>'+
+      '</div>'+
+      '<div class="wiz-nav"><button class="btn lite" onclick="cancelDraft()">Cancel</button>'+
+      '<button class="btn green" onclick="draft.cur=0;render()">Start</button></div></div>';
+  }
+  const i = draft.cur, h = draft.holes[i];
+  const done = draft.holes.slice(0,draft.count).filter(x=>x.score>0);
+  const diff = done.reduce((a,x)=>a+x.score,0) - done.reduce((a,x)=>a+x.par,0);
+  const names = {'-2':'Eagle','-1':'Birdie','0':'Par','1':'Bogey','2':'Double','3':'Triple'};
+  let scoreBtns = '';
+  for (let s=Math.max(1,h.par-2); s<=h.par+3; s++){
+    const rel = s-h.par;
+    scoreBtns += '<button class="pill '+(h.score===s?'grn':'')+'" onclick="setH('+i+',\'score\','+s+')">'+s+'<small>'+(names[rel]||'+'+rel)+'</small></button>';
+  }
+  let dots = '';
+  for (let d=0; d<draft.count; d++) dots += '<i class="'+(draft.holes[d].score>0?'done ':'')+(d===i?'cur':'')+'"></i>';
+  return '<div>'+
+    '<div class="wiz-head"><div class="hole"><em>Hole</em>'+String(i+1).padStart(2,'0')+'</div>'+
+    '<div class="run"><div class="v">'+(done.length ? (diff>0?'+':'')+(diff===0?'E':diff) : 'E')+'</div><div class="k">thru '+done.length+'</div></div></div>'+
+    '<div class="dots">'+dots+'</div>'+
+    '<label class="fld">Par</label><div class="pills">'+
+      [3,4,5].map(p=>'<button class="pill '+(h.par===p?'sel':'')+'" onclick="setH('+i+',\'par\','+p+')">'+p+'</button>').join('')+'</div>'+
+    (h.par>3 ? '<label class="fld">Tee Club</label><div class="pills">'+
+      TEES.map(t=>'<button class="pill '+(h.tee===t?'sel':'')+'" style="font-size:0.72rem;" onclick="setH('+i+',\'tee\',\''+t+'\')">'+t+'</button>').join('')+'</div>' : '')+
+    '<label class="fld">Score</label><div class="pills">'+scoreBtns+'</div>'+
+    '<label class="fld">Putts</label><div class="pills">'+
+      [0,1,2,3,4].map(p=>'<button class="pill '+(h.putts===p?'sel':'')+'" onclick="setH('+i+',\'putts\','+p+')">'+p+'</button>').join('')+'</div>'+
+    '<label class="fld">Off the Tee &amp; Approach</label><div style="display:flex;gap:10px;">'+
+      (h.par>3 ? '<button class="tgl2 '+(h.fir?'on':'')+'" onclick="setH('+i+',\'fir\','+(!h.fir)+')">Fairway '+(h.fir?'\u2713':'')+'</button>' : '')+
+      '<button class="tgl2 '+(h.gir?'on':'')+'" onclick="setH('+i+',\'gir\','+(!h.gir)+')">Green '+(h.gir?'\u2713':'')+'</button></div>'+
+    '<label class="fld">Hole Note</label><input type="text" placeholder="e.g. pushed drive right" value="'+esc(h.note)+'" onchange="draft.holes['+i+'].note=this.value">'+
+    '<div class="wiz-nav">'+
+      '<button class="btn lite" style="flex:0 0 64px;" onclick="'+(i>0?'draft.cur--':'draft.cur=-1')+';render()">&larr;</button>'+
+      (i<draft.count-1 ? '<button class="btn" onclick="nextHole()">Next Hole</button>' : '<button class="btn green" onclick="draft.review=true;render()">Finish</button>')+
+    '</div>'+
+    '<button class="btn txt" style="width:100%;margin-top:8px;" onclick="draft.review=true;render()">Finish early</button>'+
+    '<button class="btn txt" style="width:100%;" onclick="cancelDraft()">Discard round</button>'+
+  '</div>';
+}
+
+function scGrid(holes, count){
+  const half = (from,to)=>{
+    const hs = holes.slice(from,to);
+    const played = hs.filter(h=>h.score>0);
+    const c = {hole:'',par:'',score:'',putts:''};
+    hs.forEach((h,idx)=>{
+      c.hole += '<th>'+(from+idx+1)+'</th>';
+      c.par += '<td>'+h.par+'</td>';
+      let cls=''; const rel=h.score-h.par;
+      if (h.score>0){ if(rel<0)cls='birdie'; else if(rel===1)cls='bogey'; else if(rel>=2)cls='dbl'; }
+      c.score += '<td>'+(h.score>0 ? '<span class="sc-badge '+cls+'">'+h.score+'</span>' : '&ndash;')+'</td>';
+      c.putts += '<td>'+(h.score>0 ? h.putts : '&ndash;')+'</td>';
+    });
+    return {c:c, par:played.reduce((a,h)=>a+h.par,0), score:played.reduce((a,h)=>a+h.score,0), putts:played.reduce((a,h)=>a+h.putts,0)};
+  };
+  const f = half(0,Math.min(9,count));
+  const b = count>9 ? half(9,18) : null;
+  const tS=f.score+(b?b.score:0), tP=f.par+(b?b.par:0), tPt=f.putts+(b?b.putts:0);
+  return '<div class="sc-scroll"><table class="sc"><thead><tr><th style="text-align:left;">Hole</th>'+f.c.hole+'<th>Out</th>'+(b?b.c.hole+'<th>In</th>':'')+'<th>Tot</th></tr></thead><tbody>'+
+    '<tr><th>Par</th>'+f.c.par+'<td class="tot">'+f.par+'</td>'+(b?b.c.par+'<td class="tot">'+b.par+'</td>':'')+'<td class="tot">'+tP+'</td></tr>'+
+    '<tr><th>Score</th>'+f.c.score+'<td class="tot">'+(f.score||'&ndash;')+'</td>'+(b?b.c.score+'<td class="tot">'+(b.score||'&ndash;')+'</td>':'')+'<td class="tot">'+(tS||'&ndash;')+'</td></tr>'+
+    '<tr><th>Putts</th>'+f.c.putts+'<td class="tot">'+f.putts+'</td>'+(b?b.c.putts+'<td class="tot">'+b.putts+'</td>':'')+'<td class="tot">'+tPt+'</td></tr>'+
+    '</tbody></table></div>';
+}
+function holeNotes(holes){
+  const rows = holes.map((h,i)=> h.note ? '<div class="coach"><span class="no">H'+(i+1)+'</span><p>'+esc(h.note)+'</p></div>' : '').filter(Boolean);
+  return rows.length ? '<div style="margin-top:18px;"><div class="eyebrow">Hole Notes</div>'+rows.join('')+'</div>' : '';
+}
+function radar(vals, bench){
+  const cx=150, cy=132, R=96;
+  const pt = (i,v)=>{ const a=[-90,0,90,180][i]*Math.PI/180; return (cx+Math.cos(a)*R*v)+','+(cy+Math.sin(a)*R*v); };
+  const poly = a=>a.map((v,i)=>pt(i,Math.max(.04,Math.min(1,v)))).join(' ');
+  const ring = f=>'<polygon points="'+[0,1,2,3].map(i=>pt(i,f)).join(' ')+'" fill="none" stroke="rgba(255,255,255,.08)" stroke-width="1"/>';
+  const L = 'font-family="IBM Plex Mono, monospace" font-size="8.5" font-weight="600" letter-spacing="1.5" fill="#9a988f"';
+  return '<div class="radar-wrap"><svg width="300" height="264" viewBox="0 0 300 264" xmlns="http://www.w3.org/2000/svg">'+
+    ring(1)+ring(.66)+ring(.33)+
+    '<line x1="'+cx+'" y1="'+(cy-R)+'" x2="'+cx+'" y2="'+(cy+R)+'" stroke="rgba(255,255,255,.08)"/>'+
+    '<line x1="'+(cx-R)+'" y1="'+cy+'" x2="'+(cx+R)+'" y2="'+cy+'" stroke="rgba(255,255,255,.08)"/>'+
+    '<polygon points="'+poly(bench)+'" fill="none" stroke="rgba(255,255,255,.28)" stroke-width="1.2" stroke-dasharray="3 4"/>'+
+    '<polygon points="'+poly(vals)+'" fill="rgba(87,201,141,.13)" stroke="#57c98d" stroke-width="1.8"/>'+
+    vals.map((v,i)=>{ const xy = pt(i,Math.max(.04,Math.min(1,v))).split(','); return '<circle cx="'+xy[0]+'" cy="'+xy[1]+'" r="3.2" fill="#57c98d"/>'; }).join('')+
+    '<text x="'+cx+'" y="'+(cy-R-12)+'" text-anchor="middle" '+L+'>OFF THE TEE</text>'+
+    '<text x="'+(cx+R+8)+'" y="'+(cy+3)+'" text-anchor="start" '+L+'>APPR</text>'+
+    '<text x="'+cx+'" y="'+(cy+R+18)+'" text-anchor="middle" '+L+'>SHORT GAME</text>'+
+    '<text x="'+(cx-R-8)+'" y="'+(cy+3)+'" text-anchor="end" '+L+'>PUTT</text>'+
+    '</svg></div>'+
+    '<div style="display:flex;gap:18px;justify-content:center;margin-top:2px;">'+
+    '<span class="eyebrow" style="color:var(--green);">&mdash; You</span><span class="eyebrow">- - Tour avg</span></div>';
+}
+function gapPill(val, bench, higherBetter, suffix){
+  if (higherBetter === undefined) higherBetter = true;
+  if (suffix === undefined) suffix = '%';
+  const diff = val - bench;
+  const good = higherBetter ? diff>=0 : diff<=0;
+  const shown = Math.abs(diff).toFixed(suffix==='%' ? 0 : 2);
+  return '<span class="gap '+(good?'up':'dn')+'">'+(good?'+':'\u2212')+shown+suffix+'</span>';
+}
+function roundSummary(played){
+  if (played.length < 6) return '';
+  let girH=0, firH=0, firT=0, scrA=0, scrM=0, tPt=0;
+  played.forEach(h=>{
+    if (h.gir) girH++;
+    if (h.par>3){ firT++; if(h.fir) firH++; }
+    if (!h.gir){ scrA++; if(h.score<=h.par) scrM++; }
+    tPt += h.putts;
+  });
+  const gir=girH/played.length*100, fir=firT?firH/firT*100:0, scr=scrA?scrM/scrA*100:0, pph=tPt/played.length;
+  const vals=[fir/100, gir/100, scr/100, Math.max(0,Math.min(1,(2.3-pph)/0.9))];
+  const bench=[0.60,0.65,0.58,(2.3-1.60)/0.9];
+  return '<div style="margin-top:24px;"><div class="eyebrow">This Round &mdash; Game Shape</div>'+radar(vals,bench)+
+    '<div class="bench"><div class="n">Off the Tee<small>Tour 60%</small></div><div class="r"><span class="v">'+Math.round(fir)+'%</span>'+gapPill(fir,60)+'</div></div>'+
+    '<div class="bench"><div class="n">Approaches<small>Tour 65%</small></div><div class="r"><span class="v">'+Math.round(gir)+'%</span>'+gapPill(gir,65)+'</div></div>'+
+    '<div class="bench"><div class="n">Short Game<small>Tour 58%</small></div><div class="r"><span class="v">'+Math.round(scr)+'%</span>'+gapPill(scr,58)+'</div></div>'+
+    '<div class="bench"><div class="n">Putting<small>Tour 1.60 / hole</small></div><div class="r"><span class="v">'+pph.toFixed(2)+'</span>'+gapPill(pph,1.60,false,'')+'</div></div></div>';
+}
+function renderReview(){
+  const played = draft.holes.slice(0,draft.count).filter(h=>h.score>0);
+  if (!played.length){ draft.review=false; toast('No scores yet'); return renderWizard(); }
+  const s = played.reduce((a,h)=>a+h.score,0), p = played.reduce((a,h)=>a+h.par,0), d = s-p;
+  return '<div><div class="eyebrow grn">Scorecard &mdash; '+(esc(draft.course)||'Round')+' / '+fmtDate(draft.date)+'</div>'+
+    '<div style="display:flex;align-items:baseline;gap:14px;margin:16px 0 22px;">'+
+      '<span style="font-family:var(--disp);font-size:3.4rem;font-weight:600;letter-spacing:-0.04em;line-height:1;">'+s+'</span>'+
+      '<span style="font-size:1.2rem;font-weight:800;color:'+(d<=0?'var(--green)':'var(--red)')+'">'+(d>0?'+':'')+(d===0?'E':d)+'</span>'+
+      '<span class="eyebrow">'+played.length+' holes</span></div>'+
+    scGrid(draft.holes, draft.count)+
+    roundSummary(played)+
+    holeNotes(draft.holes)+
+    '<label class="fld">Round Notes</label><textarea placeholder="What worked? What did not?" onchange="draft.notes=this.value">'+esc(draft.notes)+'</textarea>'+
+    '<div class="wiz-nav"><button class="btn lite" onclick="draft.review=false;render()">Edit</button>'+
+    '<button class="btn green" onclick="saveDraft()">Save Round</button></div>'+
+    '<button class="btn txt" style="width:100%;margin-top:8px;" onclick="cancelDraft()">Discard</button></div>';
+}
+
+function renderPuttingForm(){
+  const rows = draft.drills.map((d,i)=>
+    '<div class="entry-row">'+
+    '<select style="flex:1;min-width:90px;width:auto;" onchange="draft.drills['+i+'].dist=this.value">'+
+      DISTS.map(x=>'<option '+(d.dist===x?'selected':'')+'>'+x+'</option>').join('')+'</select>'+
+    '<div><div class="mini-lbl">Attempts</div><div class="stepper"><button onclick="pb('+i+',\'att\',-1)">\u2212</button><span>'+d.att+'</span><button onclick="pb('+i+',\'att\',1)">+</button></div></div>'+
+    '<div><div class="mini-lbl">Made</div><div class="stepper"><button onclick="pb('+i+',\'made\',-1)">\u2212</button><span>'+d.made+'</span><button onclick="pb('+i+',\'made\',1)">+</button></div></div>'+
+    '</div>').join('');
+  return '<div class="sec"><div class="eyebrow grn">02 &mdash; Putting Practice</div>'+
+    '<label class="fld">Date</label><input type="date" value="'+draft.date+'" onchange="draft.date=this.value">'+
+    '<div style="margin-top:14px;">'+rows+'</div>'+
+    '<button class="btn txt" style="width:100%;text-align:left;color:var(--green);padding-left:0;" onclick="draft.drills.push({dist:\'10 ft\',att:10,made:0});render()">+ Add distance</button>'+
+    '<label class="fld">Notes</label><textarea placeholder="Green speed, stroke feel" onchange="draft.notes=this.value">'+esc(draft.notes)+'</textarea>'+
+    '<div class="wiz-nav"><button class="btn lite" onclick="cancelDraft()">Discard</button>'+
+    '<button class="btn green" onclick="saveDraft()">Save</button></div></div>';
+}
+function pb(i,k,d){ const dr=draft.drills[i]; dr[k]=Math.max(0,dr[k]+d); if(dr.made>dr.att)dr.made=dr.att; render(); }
+
+function renderRangeForm(){
+  const rows = draft.clubs.map((c,i)=>
+    '<div class="entry-row">'+
+    '<select style="flex:1;min-width:90px;width:auto;" onchange="draft.clubs['+i+'].club=this.value">'+
+      CLUBS.map(x=>'<option '+(c.club===x?'selected':'')+'>'+x+'</option>').join('')+'</select>'+
+    '<div><div class="mini-lbl">Shots</div><div class="stepper"><button onclick="rb('+i+',\'shots\',-1)">\u2212</button><span>'+c.shots+'</span><button onclick="rb('+i+',\'shots\',1)">+</button></div></div>'+
+    '<div><div class="mini-lbl">Good</div><div class="stepper"><button onclick="rb('+i+',\'good\',-1)">\u2212</button><span>'+c.good+'</span><button onclick="rb('+i+',\'good\',1)">+</button></div></div>'+
+    '<div style="width:100%;"><div class="mini-lbl" style="text-align:left;">Main miss</div><div class="pills" style="margin-top:5px;">'+
+      MISSES.map(m=>'<button class="pill '+(c.miss===m?'sel':'')+'" style="font-size:0.68rem;padding:9px 0;" onclick="draft.clubs['+i+'].miss=\''+m+'\';render()">'+m+'</button>').join('')+
+    '</div></div></div>').join('');
+  return '<div class="sec"><div class="eyebrow grn">03 &mdash; Range Session</div>'+
+    '<label class="fld">Date</label><input type="date" value="'+draft.date+'" onchange="draft.date=this.value">'+
+    '<div style="margin-top:14px;">'+rows+'</div>'+
+    '<button class="btn txt" style="width:100%;text-align:left;color:var(--green);padding-left:0;" onclick="draft.clubs.push({club:\'Driver\',shots:10,good:0,miss:\'Straight\'});render()">+ Add club</button>'+
+    '<label class="fld">Notes</label><textarea placeholder="Swing thought, contact" onchange="draft.notes=this.value">'+esc(draft.notes)+'</textarea>'+
+    '<div class="wiz-nav"><button class="btn lite" onclick="cancelDraft()">Discard</button>'+
+    '<button class="btn green" onclick="saveDraft()">Save</button></div></div>';
+}
+function rb(i,k,d){ const c=draft.clubs[i]; c[k]=Math.max(0,c[k]+d); if(c.good>c.shots)c.good=c.shots; render(); }
+
+async function saveDraft(){
+  if (draft.type==='round'){
+    draft.holes = draft.holes.slice(0,draft.count);
+    if (draft.holes.every(h=>!h.score)){ toast('Enter at least one score'); return; }
+  }
+  draft.id = Date.now();
+  delete draft.cur; delete draft.review;
+  sessions.unshift(draft);
+  draft = null;
+  await save(); toast('Saved'); setTab('history');
+}
+
+/* ---------- HISTORY ---------- */
+function summarize(s){
+  if (s.type==='round'){
+    const p = s.holes.filter(h=>h.score>0);
+    const sc = p.reduce((a,h)=>a+h.score,0), pr = p.reduce((a,h)=>a+h.par,0), d = sc-pr;
+    return {big: sc, sub: (d>0?'+':'')+(d===0?'E':d)+' / '+p.length+'h'};
+  }
+  if (s.type==='putting'){
+    const att = s.drills.reduce((a,d)=>a+d.att,0), made = s.drills.reduce((a,d)=>a+d.made,0);
+    return {big: att ? Math.round(made/att*100)+'%' : '-', sub: made+'/'+att};
+  }
+  const shots = s.clubs.reduce((a,c)=>a+c.shots,0), good = s.clubs.reduce((a,c)=>a+c.good,0);
+  return {big: shots ? Math.round(good/shots*100)+'%' : '-', sub: shots+' balls'};
+}
+function renderHistory(){
+  if (!sessions.length) return '<div class="empty">Nothing logged yet.<br>Your card is waiting.</div>';
+  const names = {round:'Round', putting:'Putting', range:'Range'};
+  const courses = [];
+  sessions.forEach(s=>{ if(s.course && courses.indexOf(s.course)<0) courses.push(s.course); });
+  let filterHtml = '';
+  if (courses.length){
+    filterHtml = '<div style="margin-bottom:10px;"><select onchange="courseFilter=this.value;render()">'+
+      '<option value="all" '+(courseFilter==='all'?'selected':'')+'>All sessions</option>'+
+      courses.map(c=>'<option value="'+esc(c)+'" '+(courseFilter===c?'selected':'')+'>'+esc(c)+'</option>').join('')+'</select></div>';
+  }
+  const shown = courseFilter==='all' ? sessions : sessions.filter(s=>s.course===courseFilter);
+  if (!shown.length) return filterHtml + '<div class="empty">No sessions for this course.</div>';
+  return filterHtml + shown.map(s=>{
+    const sum = summarize(s);
+    const det = (expanded===s.id && s.type==='round') ? '<div class="sess-detail">'+scGrid(s.holes,s.holes.length)+holeNotes(s.holes)+'</div>' : '';
+    return '<div class="sess" onclick="toggleSess('+s.id+')">'+
+      '<div class="l"><div class="t">'+names[s.type]+'</div><div class="d">'+fmtDate(s.date)+(s.course?' / '+esc(s.course):'')+'</div>'+
+      (s.notes?'<div class="n">"'+esc(s.notes)+'"</div>':'')+'</div>'+
+      '<div class="r"><div><div class="big">'+sum.big+'</div><div class="subv">'+sum.sub+'</div></div>'+
+      '<button class="del" onclick="event.stopPropagation();delSess('+s.id+')">\u2715</button></div></div>'+det;
+  }).join('');
+}
+function toggleSess(id){ expanded = expanded===id ? null : id; render(); }
+async function delSess(id){ sessions = sessions.filter(s=>s.id!==id); await save(); render(); toast('Deleted'); }
+
+/* ---------- STATS ---------- */
+function renderStats(){
+  if (!sessions.length) return '<div class="empty">Stats appear once sessions are logged.</div>';
+  const rounds = sessions.filter(s=>s.type==='round');
+  const putts = sessions.filter(s=>s.type==='putting');
+  const ranges = sessions.filter(s=>s.type==='range');
+  let html = '', coach = [];
+
+  const days = [];
+  sessions.forEach(s=>{ if(days.indexOf(s.date)<0) days.push(s.date); });
+  const ym = new Date().toISOString().slice(0,7);
+  const thisMonth = days.filter(d=>d.indexOf(ym)===0).length;
+  let streak = 0;
+  {
+    let cur = new Date();
+    const set = {};
+    days.forEach(d=>set[d]=1);
+    if (!set[cur.toISOString().slice(0,10)]) cur.setDate(cur.getDate()-1);
+    while (set[cur.toISOString().slice(0,10)]){ streak++; cur.setDate(cur.getDate()-1); }
+  }
+  html += '<div class="sec"><div class="eyebrow">Consistency</div><div class="bignum-row" style="margin-top:16px;">'+
+    '<div class="bignum"><div class="v">'+days.length+'</div><div class="k">Days<br>Practiced</div></div>'+
+    '<div class="bignum"><div class="v">'+thisMonth+'</div><div class="k">This<br>Month</div></div>'+
+    '<div class="bignum"><div class="v'+(streak>2?' grn':'')+'">'+streak+'</div><div class="k">Day<br>Streak</div></div>'+
+    '<div class="bignum"><div class="v">'+sessions.length+'</div><div class="k">Total<br>Sessions</div></div></div></div>';
+
+  if (rounds.length){
+    let tS=0,tP=0,tPt=0,girH=0,girT=0,firH=0,firT=0,three=0,N=0,dbl=0,girBird=0,scrAtt=0,scrMade=0;
+    let drvT=0,drvH=0,othT=0,othH=0;
+    const parType = {3:{s:0,p:0,n:0,g:0,b:0},4:{s:0,p:0,n:0,g:0,b:0},5:{s:0,p:0,n:0,g:0,b:0}};
+    let fS=0,fP=0,fN=0,bS=0,bP=0,bN=0;
+    rounds.forEach(r=>r.holes.forEach((h,idx)=>{
+      if (!(h.score>0)) return;
+      tS+=h.score; tP+=h.par; tPt+=h.putts; N++;
+      girT++; if (h.gir){ girH++; if (h.score<h.par) girBird++; }
+      if (!h.gir){ scrAtt++; if (h.score<=h.par) scrMade++; }
+      if (h.par>3){ firT++; if (h.fir) firH++;
+        if (h.tee){ if (h.tee==='Driver'){ drvT++; if(h.fir) drvH++; } else { othT++; if(h.fir) othH++; } } }
+      if (h.putts>=3) three++;
+      if (h.score-h.par>=2) dbl++;
+      const pt = parType[h.par];
+      if (pt){ pt.s+=h.score; pt.p+=h.par; pt.n++; if(h.gir)pt.g++; if(h.score<h.par)pt.b++; }
+      if (idx<9){ fS+=h.score; fP+=h.par; fN++; } else { bS+=h.score; bP+=h.par; bN++; }
+    }));
+    const gir = girT?girH/girT*100:0, fir = firT?firH/firT*100:0;
+    const scr = scrAtt?scrMade/scrAtt*100:0, pph = N?tPt/N:0, tpr = N?three/N*100:0;
+    const avgVsPar = (tS-tP)/rounds.length;
+
+    const vals = [fir/100, gir/100, scr/100, Math.max(0,Math.min(1,(2.3-pph)/0.9))];
+    const bench = [0.60, 0.65, 0.58, (2.3-1.60)/0.9];
+    html += '<div class="sec"><div class="eyebrow">Game Shape &mdash; '+rounds.length+' rounds</div>'+radar(vals,bench)+'</div>';
+
+    html += '<div class="sec"><div class="eyebrow">You vs Tour Average</div><div style="margin-top:8px;">'+
+      '<div class="bench"><div class="n">Greens in Regulation<small>Tour 65%</small></div><div class="r"><span class="v">'+Math.round(gir)+'%</span>'+gapPill(gir,65)+'</div></div>'+
+      '<div class="bench"><div class="n">Fairways Hit<small>Tour 60%</small></div><div class="r"><span class="v">'+Math.round(fir)+'%</span>'+gapPill(fir,60)+'</div></div>'+
+      '<div class="bench"><div class="n">Putts per Hole<small>Tour 1.60</small></div><div class="r"><span class="v">'+pph.toFixed(2)+'</span>'+gapPill(pph,1.60,false,'')+'</div></div>'+
+      '<div class="bench"><div class="n">Three-Putt Rate<small>Tour 3%</small></div><div class="r"><span class="v">'+Math.round(tpr)+'%</span>'+gapPill(tpr,3,false)+'</div></div>'+
+      '<div class="bench"><div class="n">Scrambling<small>Tour 58%</small></div><div class="r"><span class="v">'+Math.round(scr)+'%</span>'+gapPill(scr,58)+'</div></div>'+
+      '</div><div class="eyebrow" style="margin-top:14px;color:var(--faint);">Tour numbers are approximate PGA averages</div></div>';
+
+    let parRows = '';
+    [3,4,5].forEach(p=>{
+      const d = parType[p]; if (!d.n) return;
+      const avg = d.s/d.n, girP = d.g/d.n*100, birdP = d.b/d.n*100;
+      parRows += '<div class="eyebrow" style="margin:22px 0 4px;color:var(--faint);">Par '+p+'s &mdash; '+d.n+' holes</div>'+
+        '<div class="bench"><div class="n">Average Score<small>PGA '+PGA[p].avg.toFixed(2)+'</small></div><div class="r"><span class="v">'+avg.toFixed(2)+'</span>'+gapPill(avg,PGA[p].avg,false,'')+'</div></div>'+
+        '<div class="bench"><div class="n">GIR<small>PGA '+PGA[p].gir+'%</small></div><div class="r"><span class="v">'+Math.round(girP)+'%</span>'+gapPill(girP,PGA[p].gir)+'</div></div>'+
+        '<div class="bench"><div class="n">Birdie or Better<small>PGA '+PGA[p].bird+'%</small></div><div class="r"><span class="v">'+Math.round(birdP)+'%</span>'+gapPill(birdP,PGA[p].bird)+'</div></div>';
+    });
+    if (parRows) html += '<div class="sec"><div class="eyebrow">By Par Type vs PGA</div>'+parRows+'</div>';
+
+    if (drvT+othT >= 5){
+      const dPct = drvT ? Math.round(drvH/drvT*100) : null;
+      const oPct = othT ? Math.round(othH/othT*100) : null;
+      html += '<div class="sec"><div class="eyebrow">Off the Tee</div><div class="bignum-row" style="margin-top:16px;">'+
+        (dPct!==null?'<div class="bignum"><div class="v">'+dPct+'%</div><div class="k">Fairways<br>with Driver</div></div>':'')+
+        (oPct!==null?'<div class="bignum"><div class="v">'+oPct+'%</div><div class="k">Fairways<br>Wood / Iron</div></div>':'')+
+        '</div></div>';
+      if (dPct!==null && oPct!==null && drvT>=5 && oPct-dPct>=20)
+        coach.push('Fairways: <b>'+dPct+'% with driver vs '+oPct+'% without</b>. On tight holes the 3-wood is the smarter play right now, and driver dispersion is worth range time.');
+    }
+
+    html += '<div class="sec"><div class="eyebrow">Scoring</div><div class="bignum-row" style="margin-top:16px;">'+
+      '<div class="bignum"><div class="v">'+(avgVsPar>0?'+':'')+avgVsPar.toFixed(1)+'</div><div class="k">Avg vs Par<br>per Round</div></div>'+
+      '<div class="bignum"><div class="v">'+(dbl/rounds.length).toFixed(1)+'</div><div class="k">Doubles+<br>per Round</div></div>'+
+      '</div><div style="margin-top:22px;">';
+    [3,4,5].forEach(p=>{
+      const d = parType[p]; if (!d.n) return;
+      const avg = (d.s-d.p)/d.n;
+      const pct = Math.min(100, Math.max(5, 100 - avg*55));
+      const col = avg<=0.3 ? 'var(--green)' : (avg<=0.6 ? '#d8b25c' : 'var(--red)');
+      html += '<div class="hbar"><div class="lbl"><span>Par '+p+'s</span><span>'+(avg>0?'+':'')+avg.toFixed(2)+'</span></div>'+
+        '<div class="trk"><div class="fil" style="width:'+pct+'%;background:'+col+'"></div></div></div>';
+    });
+    html += '</div>';
+    const last = rounds.slice(0,7).reverse();
+    if (last.length>1){
+      const diffs = last.map(r=>{ const p=r.holes.filter(h=>h.score>0); return p.reduce((a,h)=>a+h.score,0)-p.reduce((a,h)=>a+h.par,0); });
+      const max = Math.max.apply(null, diffs.map(Math.abs).concat([1]));
+      html += '<div style="margin-top:28px;"><div class="eyebrow">Recent rounds vs par</div><div class="bars">'+
+        diffs.map(d=>{ const col = d<=0?'var(--green)':'var(--red)';
+          return '<div class="b" style="height:'+Math.max(6,Math.abs(d)/max*100)+'%;background:'+col+'"><span style="color:'+col+'">'+(d>0?'+':'')+d+'</span></div>'; }).join('')+
+        '</div></div>';
+    }
+    html += '</div>';
+
+    const cands = [3,4,5].filter(p=>parType[p].n>=3);
+    if (cands.length){
+      cands.sort((a,b)=>((parType[b].s-parType[b].p)/parType[b].n)-((parType[a].s-parType[a].p)/parType[a].n));
+      const w = cands[0];
+      const tips = {3:'Tee-shot distance control is the fix. Range work with mid and short irons to exact yardages.',
+                    4:'Usually tee shots. Check fairway % and the driver miss pattern.',
+                    5:'These should be scoring holes. Lay-up and wedge distances need attention.'};
+      coach.push('<b>Par '+w+'s</b> are the weakest hole type (+'+((parType[w].s-parType[w].p)/parType[w].n).toFixed(2)+' per hole). '+tips[w]);
+    }
+    if (tpr > 12) coach.push('<b>'+Math.round(tpr)+'% three-putt rate</b> is high. Lag putting from 20+ ft is the fastest fix: aim for a 3-ft circle, not the hole.');
+    if (girT && gir>=35 && girH && girBird/girH<0.2) coach.push('Hitting greens but <b>converting only '+Math.round(girBird/girH*100)+'% into birdies</b>. Putting inside 10 ft is where those strokes are hiding.');
+    if (scrAtt>=5 && scr<30) coach.push('<b>Scrambling '+Math.round(scr)+'%</b>. When the green is missed, par rarely gets saved. Chipping and pitching protect the score.');
+    if (dbl/rounds.length >= 2) coach.push('Averaging <b>'+(dbl/rounds.length).toFixed(1)+' doubles-or-worse per round</b>. Big numbers, not missed pars, are inflating scores.');
+    if (fN>3 && bN>3){
+      const fAvg=(fS-fP)/fN, bAvg=(bS-bP)/bN;
+      if (bAvg-fAvg > 0.25) coach.push('<b>Back nine drop-off</b>: '+((bAvg-fAvg)*9).toFixed(1)+' strokes more than the front. Focus, fitness, or food.');
+    }
+  }
+
+  if (putts.length){
+    const byDist = {};
+    putts.forEach(s=>s.drills.forEach(d=>{ if(!byDist[d.dist]) byDist[d.dist]={att:0,made:0}; byDist[d.dist].att+=d.att; byDist[d.dist].made+=d.made; }));
+    html += '<div class="sec"><div class="eyebrow">Putting &mdash; Make %</div><div style="margin-top:12px;">'+
+      DISTS.filter(d=>byDist[d]).map(d=>{
+        const p = byDist[d].att ? Math.round(byDist[d].made/byDist[d].att*100) : 0;
+        return '<div class="hbar"><div class="lbl"><span>'+d+'</span><span>'+p+'% / '+byDist[d].made+'-'+byDist[d].att+'</span></div>'+
+          '<div class="trk"><div class="fil" style="width:'+p+'%"></div></div></div>';
+      }).join('')+'</div></div>';
+    const short = byDist['3 ft'];
+    if (short && short.att>=20 && short.made/short.att<0.85) coach.push('<b>3-footers at '+Math.round(short.made/short.att*100)+'%</b>. Tour players make about 99%. Ten minutes of short putts every session until automatic.');
+  }
+
+  if (ranges.length){
+    const byClub = {}, missCount = {};
+    ranges.forEach(s=>s.clubs.forEach(c=>{
+      if(!byClub[c.club]) byClub[c.club]={shots:0,good:0};
+      byClub[c.club].shots+=c.shots; byClub[c.club].good+=c.good;
+      if (c.miss!=='Straight') missCount[c.miss] = (missCount[c.miss]||0)+(c.shots-c.good);
+    }));
+    const clubs = Object.keys(byClub).sort((a,b)=>CLUBS.indexOf(a)-CLUBS.indexOf(b));
+    html += '<div class="sec"><div class="eyebrow">Range &mdash; Strike Quality</div><div style="margin-top:12px;">'+
+      clubs.map(c=>{
+        const p = byClub[c].shots ? Math.round(byClub[c].good/byClub[c].shots*100) : 0;
+        return '<div class="hbar"><div class="lbl"><span>'+c+'</span><span>'+p+'%</span></div>'+
+          '<div class="trk"><div class="fil" style="width:'+p+'%"></div></div></div>';
+      }).join('')+'</div></div>';
+    const misses = Object.keys(missCount).sort((a,b)=>missCount[b]-missCount[a]);
+    if (misses.length && missCount[misses[0]]>=5) coach.push('Dominant range miss: <b>'+misses[0]+'</b>. One consistent miss is fixable and usually points to a single setup or path issue.');
+    const heavy = clubs.filter(c=>byClub[c].shots>=15).sort((a,b)=>(byClub[a].good/byClub[a].shots)-(byClub[b].good/byClub[b].shots));
+    if (heavy.length) coach.push('Lowest strike quality: <b>'+heavy[0]+'</b> ('+Math.round(byClub[heavy[0]].good/byClub[heavy[0]].shots*100)+'%). Give it the first 15 balls of the next bucket, not the last.');
+  }
+
+  if (sessions.length>=5 && rounds.length){
+    const pMix = putts.length/sessions.length;
+    let tPt=0, N=0;
+    rounds.forEach(r=>r.holes.forEach(h=>{ if(h.score>0){ tPt+=h.putts; N++; } }));
+    if (N && tPt/N>1.9 && pMix<0.25) coach.push('Putting is <b>'+(tPt/N).toFixed(2)+' per hole</b> but only '+Math.round(pMix*100)+'% of practice time. The data says flip that ratio.');
+  }
+
+  if (coach.length) html += '<div class="sec"><div class="eyebrow">Coach\u2019s Notes</div><div style="margin-top:6px;">'+
+    coach.map((c,i)=>'<div class="coach"><span class="no">'+String(i+1).padStart(2,'0')+'</span><p>'+c+'</p></div>').join('')+'</div></div>';
+  return html;
+}
+load();
+
+</script>
+</body>
+</html>
